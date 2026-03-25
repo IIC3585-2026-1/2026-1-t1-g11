@@ -1,0 +1,104 @@
+body{
+    width: 100 vw;
+    height: 100 vh;
+    background-color: rgb(109, 79, 79);
+}
+
+h1{
+    color: rgb(247, 234, 234);
+    text-align: center;
+    font-size: 3 em;
+    margin-top: 2 em;
+}
+.container{
+  display: grid;
+grid-template-areas:
+  "uno dos dos"
+  "tres cuatro cinco"
+  "seis seis siete"
+  "ocho nueve nueve";
+
+}
+
+.cuadro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3 em;
+    font-weight: bold;
+    padding: 2%;
+}
+
+.uno{
+  grid-area: uno;
+  width: 300 px;
+  height: 200 px;
+  border: lime solid 2px;
+  margin: 2%;
+  color: limegreen;
+}
+
+.dos{
+  grid-area: dos;
+  height: 20 em;
+  border: coral solid 2px;
+  margin: 2%;
+  color: coral;
+}
+
+.tres{
+  grid-area: tres;
+  width: 300 em;
+  height: 20 em;
+  border: lightpink solid 2px;
+  margin: 2%;
+  color: lightcoral
+}
+
+.cuatro{
+    width: 300 em;
+    height: 20 em;
+    border: lightseagreen solid 2px;
+    margin: 2%;
+    grid-area: cuatro;
+
+
+}
+.cinco{
+    width: 300 em;
+    height: 20 em;
+    border: lightgray solid 2px;
+    margin: 2%;
+    grid-area: cinco;
+
+}
+.seis{
+    width: 300 em;
+    height: 20 em;
+    border: lightblue solid 2px;
+    margin: 2%;
+    grid-area: seis;
+}
+.siete{
+    width: 300 em;
+    height: 20 em;
+    border: lightcyan solid 2px;
+    margin: 2%;
+    grid-area: siete;
+
+
+}
+.ocho{
+    width: 300 em;
+    height: 20 em;
+    border: lightgoldenrodyellow solid 2px;
+    margin: 2%;
+    grid-area: ocho;
+}
+.nueve{
+    width: 600 em;
+    height: 20 em;
+    border: lightgray solid 2px;
+    margin: 5%;
+    grid-area: nueve;
+}
