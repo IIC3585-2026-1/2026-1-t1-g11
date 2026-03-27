@@ -28,19 +28,18 @@ button {
     opacity: 0.5;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-}
-
-button:hover {
-  opacity: 1;
-  transition: opacity 0.2s ease;
+    &:hover {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+    }
 }
 
 .show{
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 220px;
-    padding-block: 2em
+    padding: 2em;
+    flex-direction: column;
 }
 
 .header{
@@ -63,13 +62,25 @@ button:hover {
     padding: 1em 1em 1em 1em;
 }
 
+.test{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 1em;
+    gap: 0.2em;
+}
+
 .flex-container {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
 }
 
-.transform-container, .animation-container, .transition-container {
+.transform-container, 
+.animation-container, 
+.transition-container,
+.variables-container {
   display: flex;
   flex: 1 0 content;
   flex-direction: row;
@@ -87,20 +98,6 @@ button:hover {
     "ocho nueve nueve";
 }
 
-.test{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.show {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 220px;
-}
-
 .square {
   width: 180px;
   height: 180px;
@@ -109,28 +106,48 @@ button:hover {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
+
+  .inner {
+    width: 50%;
+    height: 50%;
+    background: var(--principal);
+    transition: width 0.2s ease, height 0.2s ease;
+    }
+    
 }
 
-.rotating-square {
-  width: 180px;
-  height: 180px;
+#rotatingSquare,
+#translatingSquare,
+#opacitySquare,
+#colorSquare,
+#sizeSquare {
   background-color: var(--principal);
-  border: 2px solid var(--principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s ease;
 }
 
-.translating-square {
-  width: 180px;
-  height: 180px;
-  background-color: var(--principal);
-  border: 2px solid var(--principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s ease;
+#opacitySquare {
+  transition: opacity 1s ease;
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+#colorSquare {
+  transition: background-color 1s ease, border-color 1s ease;
+
+  &:hover {
+    background-color: #39ff14;
+    border-color: #39ff14;
+  }
+}
+
+#sizeSquare {
+    transition: width 1s ease, height 1s ease;
+    
+    &:hover {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .animation-track {
@@ -154,56 +171,30 @@ button:hover {
   animation: neonMoveGrow 1.8s ease-in-out infinite alternate;
 }
 
-.inner-square {
-  width: 50%;
-  height: 50%;
-  background: var(--principal);
+#triangleWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+}
+
+.right-triangle {
+  width: 36px;
+  height: 36px;
+  background-color: var(--principal);
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
   transition: width 0.2s ease, height 0.2s ease;
 }
 
-.square-opacity {
-  width: 180px;
-  height: 180px;
-  background-color: var(--principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 1s ease;
-
-  &:hover {
-    opacity: 0;
-  }
+.triangle-labels{
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+  text-align: center;
 }
 
-.square-color {
-  width: 180px;
-  height: 180px;
-  background-color: var(--principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 1s ease;
-
-  &:hover {
-    background-color: #39ff14;
-  }
-}
-
-.square-size {
-  width: 180px;
-  height: 180px;
-  background-color: var(--principal);
-  border: 2px solid var(--principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-    transition: width 1s ease, height 1s ease;
-
-    &:hover {
-        width: 40px;
-        height: 40px;
-    }
+.triangle-label{
+    flex: 1 0 auto;
 }
 
 
@@ -212,7 +203,7 @@ button:hover {
 }
 
 @media (aspect-ratio < 3/2){
-    .transform-container, .animation-container, .transition-container {
+  .transform-container, .animation-container, .transition-container, .variables-container {
         flex-direction: column;
     }
 

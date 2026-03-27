@@ -22,7 +22,7 @@
             <div class="test-container">
                 <div class="show">
                     <div class="square">
-                        <div id="innerSquare" class="inner-square"></div>
+                        <div id="innerSquare" class="inner"></div>
                     </div>
                 </div>
                 <div class="test">
@@ -41,7 +41,7 @@
             <!-- Contenedor para la prueba de rotación -->
             <div class="test-container">
                 <div class="show">
-                    <div id="rotatingSquare" class="rotating-square">
+                    <div id="rotatingSquare" class="square">
                     </div>
                 </div>
                 <div class="test">
@@ -60,7 +60,7 @@
             <!-- Contenedor para la prueba de traslación -->
             <div class="test-container">
                 <div class="show">
-                    <div id="translatingSquare" class="translating-square">
+                    <div id="translatingSquare" class="square">
                     </div>
                 </div>
                 <div class="test">
@@ -101,7 +101,7 @@
             <!-- Contenedor para la transicion de opacidad -->
             <div class="test-container">
                 <div class="show">
-                    <div class="square-opacity"></div>
+                    <div id="opacitySquare" class="square"></div>
                 </div>
                 <div class="test">
                     <p>Opacidad</p>
@@ -111,7 +111,7 @@
             <!-- Contenedor para la transicion de color -->
             <div class="test-container">
                 <div class="show">
-                    <div class="square-color"></div>
+                    <div id="colorSquare" class="square"></div>
                 </div>
                 <div class="test">
                     <p>Color</p>
@@ -122,7 +122,7 @@
             <div class="test-container">
                 <div class="show">
                     <div class="square">
-                        <div class="square-size"></div>
+                        <div id="sizeSquare" class="square"></div>
                     </div>
                 </div>
                 <div class="test">
@@ -132,11 +132,53 @@
 
         </div>
 
+        <h2>Variables y funciones</h2>
+
+        <!-- Contenedor para las variables y funciones -->
+        <div class="variables-container">
+            <div class="test-container">
+                <div class="show">
+                    <div id="triangleWrapper" class="square">
+                        <div id="rightTriangle" class="right-triangle"></div>
+                    </div>
+                    <div class="triangle-labels">
+                        <span id="yValueLabel" class="triangle-label triangle-label-y">y = 1</span>
+                        <span id="xValueLabel" class="triangle-label triangle-label-x">x = 1</span>
+                    </div>
+                </div>
+                <div class="test">
+                    <p>Variable CSS</p>
+                    <label for="xSlider">x: <span id="xSliderValue">1</span></label>
+                    <input
+                        id="xSlider"
+                        type="range"
+                        min="1"
+                        max="5"
+                        value="1"
+                        oninput="updateRightTriangle(this.value, null)"
+                    >
+                    <label for="ySlider">y: <span id="ySliderValue">1</span></label>
+                    <input
+                        id="ySlider"
+                        type="range"
+                        min="1"
+                        max="5"
+                        value="1"
+                        oninput="updateRightTriangle(null, this.value)"
+                    >
+                    <p id="hypotenuseValue">Hipotenusa: 1.41</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
 
         let isAnimating = false;
+
+        let x = 1;
+        let y = 1;
 
         // Función para actualizar el tamaño del cuadrado interno
         function updateSquareSize(size) {
@@ -173,8 +215,39 @@
             }
         }
 
+        function updateRightTriangle(nextX, nextY) {
+            if (nextX !== null) {
+                x = Number(nextX);
+            }
+
+            if (nextY !== null) {
+                y = Number(nextY);
+            }
+
+            const unit = 36;
+            const triangle = document.getElementById('rightTriangle');
+            const xSliderValue = document.getElementById('xSliderValue');
+            const ySliderValue = document.getElementById('ySliderValue');
+            const xValueLabel = document.getElementById('xValueLabel');
+            const yValueLabel = document.getElementById('yValueLabel');
+            const hypotenuseValue = document.getElementById('hypotenuseValue');
+
+            triangle.style.width = `${x * unit}px`;
+            triangle.style.height = `${y * unit}px`;
+
+            xSliderValue.textContent = x;
+            ySliderValue.textContent = y;
+
+            xValueLabel.textContent = `x = ${x}`;
+            yValueLabel.textContent = `y = ${y}`;
+
+            const hypotenuse = Math.sqrt((x ** 2) + (y ** 2));
+            hypotenuseValue.textContent = `Hipotenusa: ${hypotenuse.toFixed(2)}`;
+        }
+
         updateSquareSize(document.getElementById('sizeSlider').value);
         updateSquareRotation(document.getElementById('rotationSlider').value);
+        updateRightTriangle(1, 1);
     </script>
 </body>
 </html>
