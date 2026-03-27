@@ -227,7 +227,7 @@ button:hover {
     .animation-track {
         width: 220px;
         height: 420px;
-        
+        flex-direction: column;
     }
 
 }
