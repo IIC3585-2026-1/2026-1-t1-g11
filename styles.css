@@ -8,14 +8,42 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(33, 30, 30);
-  font-family: "Playwrite", sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(14, 14, 14);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: white;
+  padding-bottom: 5rem;
 }
 
-.titulo{
+button {
+  background-color: rgb(216, 86, 216);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 0.1em;
+    opacity: 0.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+button:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 220px;
+    padding-block: 2em
+}
+
+.header{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +51,31 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   color: var(--principal);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
+.test-container{
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px var(--principal);
+    padding: 1em 1em 1em 1em;
+}
+
+.flex-container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+.transform-container, .animation-container, .transition-container {
+  display: flex;
+  flex: 1 0 content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
 }
 
 .container {
@@ -36,125 +87,170 @@ body {
     "ocho nueve nueve";
 }
 
-.uno {
-  grid-area: uno;
-  width: 300px;
-  height: 200px;
-  border: lime solid 2px;
-  margin: 2%;
-  color: limegreen;
+.test{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.uno:hover {
-  background-color: lime;
-  color: white;
-  border: none;
-  width: calc(100% - 20px);
-  transform: translate(120px, 50%);
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.square {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.rotating-square {
+  width: 180px;
+  height: 180px;
+  background-color: var(--principal);
+  border: 2px solid var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.translating-square {
+  width: 180px;
+  height: 180px;
+  background-color: var(--principal);
+  border: 2px solid var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.animation-track {
+  width: 420px;
+  height: 220px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  padding-inline: 16px;
+  overflow: hidden;
+}
+
+.animated-square {
+  width: 120px;
+  height: 120px;
+  background-color: #39ff14;
+  transform: translateX(0) scale(0.65);
+}
+
+.animated-square-loop {
+  animation: neonMoveGrow 1.8s ease-in-out infinite alternate;
+}
+
+.inner-square {
+  width: 50%;
+  height: 50%;
+  background: var(--principal);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.square-opacity {
+  width: 180px;
+  height: 180px;
+  background-color: var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.square-color {
+  width: 180px;
+  height: 180px;
+  background-color: var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+
+  &:hover {
+    background-color: #39ff14;
+  }
+}
+
+.square-size {
+  width: 180px;
+  height: 180px;
+  background-color: var(--principal);
+  border: 2px solid var(--principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    transition: width 1s ease, height 1s ease;
+
+    &:hover {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 
-.dos {
-  grid-area: dos;
-  height: 20em;
-  border: coral solid 2px;
-  margin: 2%;
-  color: coral;
+#sizeSlider {
+  width: 220px;
 }
 
-.dos:hover {
-  background-color: coral;
-  color: white;
-  border: none;
-  height: calc(100% - 20px);
-}
+@media (aspect-ratio < 3/2){
+    .transform-container, .animation-container, .transition-container {
+        flex-direction: column;
+    }
 
+    .flex-container {
+        align-items: center;
+    }
 
-.tres {
-  grid-area: tres;
-  width: 300px;
-  height: 20em;
-  border: lightpink solid 2px;
-  margin: 2%;
-  color: lightcoral;
-}
+    .animated-square-loop {
+        animation: neonMoveGrowMobile 1.8s ease-in-out infinite alternate;
+    }
 
-.cuatro {
-  width: 300px;
-  height: 20em;
-  border: lightseagreen solid 2px;
-  margin: 2%;
-  grid-area: cuatro;
-}
+    .animation-track {
+        width: 220px;
+        height: 420px;
+        
+    }
 
-.cinco {
-  width: 300px;
-  height: 20em;
-  border: lightgray solid 2px;
-  margin: 2%;
-  grid-area: cinco;
-}
-
-.seis {
-  width: 300px;
-  height: 20em;
-  border: lightblue solid 2px;
-  margin: 2%;
-  grid-area: seis;
-}
-
-.siete {
-  width: 300px;
-  height: 20em;
-  border: lightcyan solid 2px;
-  margin: 2%;
-  grid-area: siete;
-}
-
-.ocho {
-  width: 300px;
-  height: 20em;
-  border: lightgoldenrodyellow solid 2px;
-  margin: 2%;
-  grid-area: ocho;
-    
-  &:hover{
-    transform: rotate(0.5turn);}
-}
-
-.nueve {
-  width: 600px;
-  height: 20em;
-  border: lightgray solid 2px;
-  margin: 5%;
-  grid-area: nueve;
-}
-
-.nueve:hover {
-  animation: colored 2s;
-  transform: scale(1.1);
 }
 
 
-@keyframes colored {
+@keyframes neonMoveGrow {
   from {
-    background-color: lightcoral;
+    transform: translateX(0) scale(0.65);
+    background-color: #39ff14;
   }
   to {
-    background-color: red;
+    transform: translateX(268px) scale(1.25);
+    background-color: rgb(216, 86, 216);
   }
 }
 
-
-@media (max-width: 600px) {
-  body {
-    background: rgb(16, 55, 70);
-  }
-}
-
-
-@container (max-width: 400px) {
-  .tres {
-    background-color: lightblue;
-  }
-}
+@keyframes neonMoveGrowMobile {
+        from {
+            transform: translateY(0) scale(0.65);
+            background-color: #39ff14;
+        }
+        to {
+            transform: translateY(268px) scale(1.25);
+            background-color: rgb(216, 86, 216);
+        }
+    }
