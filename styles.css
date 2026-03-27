@@ -236,6 +236,7 @@ button {
     @container (min-height: 360px) {
         #containerQueryInnerSquare {
             background-color: var(--principal);
+            border-color: var(--principal);
         }
     }
 
@@ -251,7 +252,7 @@ button {
     @container (min-height: 440px) {
         #containerQueryInnerSquare {
             background-color: cyan;
-            background-color: cyan;
+            border-color: cyan;
             width: 120px;
             height: 120px;
         }
@@ -262,6 +263,7 @@ button {
 @container (min-width: 300px) {
     #containerQueryInnerSquare {
         background-color: var(--principal);
+        border-color: var(--principal);
     }
 }
 
@@ -277,7 +279,7 @@ button {
 @container (min-width: 460px) {
     #containerQueryInnerSquare {
         background-color: cyan;
-        background-color: cyan;
+        border-color: cyan;
         width: 120px;
         height: 120px;
     }
