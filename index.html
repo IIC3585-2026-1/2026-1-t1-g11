@@ -171,6 +171,30 @@
             </div>
         </div>
 
+        <h2>Container Query</h2>
+
+        <!-- Contenedor para la prueba de Container Query -->
+        <div class="container-query-container">
+            <div class="test-container">
+                <div class="show">
+                    <div class="animation-track" id="containerQuerySquare">
+                        <div id="containerQueryInnerSquare" class="square"></div>
+                    </div>
+                </div>
+                <div class="test">
+                    <p>Tamaño del container</p>
+                    <input
+                        id="translationSlider"
+                        type="range"
+                        min="-120"
+                        max="120"
+                        value="0"
+                        oninput="updateContainerQuerySquareSize(this.value)"
+                    >
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script>
@@ -243,6 +267,13 @@
 
             const hypotenuse = Math.sqrt((x ** 2) + (y ** 2));
             hypotenuseValue.textContent = `Hipotenusa: ${hypotenuse.toFixed(2)}`;
+        }
+
+        function updateContainerQuerySquareSize(value) {
+            const container = document.getElementById('containerQuerySquare');
+            const newSize = 420 + Number(value);
+
+            container.style.width = `${newSize}px`;
         }
 
         updateSquareSize(document.getElementById('sizeSlider').value);
