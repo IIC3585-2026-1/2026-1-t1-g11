@@ -181,7 +181,7 @@ button {
 #containerQuerySquare {
   align-items: center;
   justify-content: center;
-  container-type: inline-size;
+  container-type: size;
 }
 
 .right-triangle {
@@ -225,6 +225,36 @@ button {
         width: 220px;
         height: 420px;
         flex-direction: column;
+    }
+
+    #containerQueryShow{
+        flex-direction: column;
+        height: 460px;
+        padding: 1em;
+    }
+
+    @container (min-height: 360px) {
+        #containerQueryInnerSquare {
+            background-color: var(--principal);
+        }
+    }
+
+    @container (min-height: 400px) {
+        #containerQueryInnerSquare {
+            background-color: white;
+            border-color: white;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    @container (min-height: 440px) {
+        #containerQueryInnerSquare {
+            background-color: cyan;
+            background-color: cyan;
+            width: 120px;
+            height: 120px;
+        }
     }
 
 }

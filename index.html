@@ -176,7 +176,7 @@
         <!-- Contenedor para la prueba de Container Query -->
         <div class="container-query-container">
             <div class="test-container">
-                <div class="show">
+                <div id="containerQueryShow" class="show">
                     <div class="animation-track" id="containerQuerySquare">
                         <div id="containerQueryInnerSquare" class="square"></div>
                     </div>
@@ -271,9 +271,24 @@
 
         function updateContainerQuerySquareSize(value) {
             const container = document.getElementById('containerQuerySquare');
-            const newSize = 420 + Number(value);
 
-            container.style.width = `${newSize}px`;
+            let baseSize = 0;
+
+            console.log('Container size before update:');
+            console.log(`Width: ${container.clientWidth}, Height: ${container.clientHeight}`);
+
+            let width = parseInt(container.clientWidth);
+            let height = parseInt(container.clientHeight);
+
+            let extraSize = (width > height) ? Number(value) : Number(value) * 0.5;
+            
+            const newSize = 420 + extraSize;
+
+            if (width > height) {
+                container.style.width = `${newSize}px`;
+            } else {
+                container.style.height = `${newSize}px`;
+            }
         }
 
         updateSquareSize(document.getElementById('sizeSlider').value);
