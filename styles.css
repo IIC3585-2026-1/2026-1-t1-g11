@@ -106,6 +106,7 @@ button {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
+  }
 
   .inner {
     width: 50%;
@@ -113,7 +114,53 @@ button {
     background: var(--principal);
     transition: width 0.2s ease, height 0.2s ease;
     }
-    
+
+.grid-transitions-container {
+	display: grid;
+	border: var(--principal) solid 2px;
+	grid: repeat(4, 1fr) / repeat(4, 1fr);
+	grid-gap: 0px;
+	transition: grid-gap 1s;
+	height: 20rem;
+	padding: 4rem;
+}
+
+.grid-transitions-container:hover {
+	grid-gap: 2rem;
+}
+
+.grid-transitions-container > div {
+	background-color: var(--principal);
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.grid-transitions-container > div:nth-child(1) {
+	grid-row: 1 / span 2;
+}
+
+.grid-transitions-container > div:nth-child(2) {
+	grid-row: 3 / span 2;
+}
+
+.grid-transitions-container > div:nth-child(3) {
+	grid-column: 2 / span 2;
+}
+
+.grid-transitions-container > div:nth-child(4) {
+	grid-area: 2 / 2 / span 3;
+}
+
+.grid-transitions-container > div:nth-child(5) {
+	grid-area: 1 / 4 / span 2;
+}
+
+.grid-transitions-container > div:nth-child(6) {
+	grid-area: 2 / 3;
+}
+
+.grid-transitions-container > div:nth-child(7) {
+	grid-area: 3 / 3 / span 2 / span 2;
 }
 
 #rotatingSquare,
