@@ -11,38 +11,38 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(14, 14, 14);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
   padding-bottom: 5rem;
 }
 
 button {
   background-color: rgb(216, 86, 216);
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    border-radius: 0.1em;
-    opacity: 0.5;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 0.1em;
+  opacity: 0.5;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
-    &:hover {
-        opacity: 1;
-        transition: opacity 0.2s ease;
-    }
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
 }
 
-.show{
-    display: flex;
-    justify-content: center;
-    min-height: 220px;
-    padding: 2em;
-    flex-direction: column;
+.show {
+  display: flex;
+  justify-content: center;
+  min-height: 220px;
+  padding: 2em;
+  flex-direction: column;
 }
 
-.header{
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,23 +52,23 @@ button {
   color: var(--principal);
 }
 
-.test-container{
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px var(--principal);
-    padding: 1em 1em 1em 1em;
+.test-container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px var(--principal);
+  padding: 1em 1em 1em 1em;
 }
 
-.test{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-block: 1em;
-    gap: 0.2em;
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 1em;
+  gap: 0.2em;
 }
 
 .flex-container {
@@ -77,8 +77,8 @@ button {
   flex-direction: column;
 }
 
-.transform-container, 
-.animation-container, 
+.transform-container,
+.animation-container,
 .transition-container,
 .variables-container {
   display: flex;
@@ -106,61 +106,63 @@ button {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
-  }
+}
 
-  .inner {
-    width: 50%;
-    height: 50%;
-    background: var(--principal);
-    transition: width 0.2s ease, height 0.2s ease;
-    }
+.inner {
+  width: 50%;
+  height: 50%;
+  background: var(--principal);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
 
 .grid-transitions-container {
-	display: grid;
-	border: var(--principal) solid 2px;
-	grid: repeat(4, 1fr) / repeat(4, 1fr);
-	grid-gap: 0px;
-	transition: grid-gap 1s;
-	height: 20rem;
-	padding: 4rem;
+  display: grid;
+  border: var(--principal) solid 2px;
+  grid: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-gap: 0px;
+  transition: grid-gap 1s;
+  height: 20rem;
+  padding: 4rem;
 }
 
 .grid-transitions-container:hover {
-	grid-gap: 2rem;
+  grid-gap: 2rem;
 }
 
 .grid-transitions-container > div {
-	background-color: var(--principal);
-	box-sizing: border-box;
-	text-align: center;
+  background-color: var(--principal);
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .grid-transitions-container > div:nth-child(1) {
-	grid-row: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 
 .grid-transitions-container > div:nth-child(2) {
-	grid-row: 3 / span 2;
+  grid-row: 3 / span 2;
 }
 
 .grid-transitions-container > div:nth-child(3) {
-	grid-column: 2 / span 2;
+  grid-column: 2 / span 2;
 }
 
 .grid-transitions-container > div:nth-child(4) {
-	grid-area: 2 / 2 / span 3;
+  grid-area: 2 / 2 / span 3;
 }
 
 .grid-transitions-container > div:nth-child(5) {
-	grid-area: 1 / 4 / span 2;
+  grid-area: 1 / 4 / span 2;
 }
 
 .grid-transitions-container > div:nth-child(6) {
-	grid-area: 2 / 3;
+  grid-area: 2 / 3;
 }
 
 .grid-transitions-container > div:nth-child(7) {
-	grid-area: 3 / 3 / span 2 / span 2;
+  grid-area: 3 / 3 / span 2 / span 2;
 }
 
 #rotatingSquare,
@@ -180,7 +182,9 @@ button {
 }
 
 #colorSquare {
-  transition: background-color 1s ease, border-color 1s ease;
+  transition:
+    background-color 1s ease,
+    border-color 1s ease;
 
   &:hover {
     background-color: #39ff14;
@@ -189,12 +193,14 @@ button {
 }
 
 #sizeSquare {
-    transition: width 1s ease, height 1s ease;
-    
-    &:hover {
-        width: 40px;
-        height: 40px;
-    }
+  transition:
+    width 1s ease,
+    height 1s ease;
+
+  &:hover {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .animation-track {
@@ -236,102 +242,104 @@ button {
   height: 36px;
   background-color: var(--principal);
   clip-path: polygon(0 100%, 0 0, 100% 100%);
-  transition: width 0.2s ease, height 0.2s ease;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
 }
 
-.triangle-labels{
-    display: flex;
-    flex-direction: row;
-    flex: 1 0 auto;
+.triangle-labels {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 auto;
   text-align: center;
 }
 
-.triangle-label{
-    flex: 1 0 auto;
+.triangle-label {
+  flex: 1 0 auto;
 }
-
 
 #sizeSlider {
   width: 220px;
 }
 
-@media (aspect-ratio < 3/2){
-  .transform-container, .animation-container, .transition-container, .variables-container {
-        flex-direction: column;
-    }
+@media (aspect-ratio < 3/2) {
+  .transform-container,
+  .animation-container,
+  .transition-container,
+  .variables-container {
+    flex-direction: column;
+  }
 
-    .flex-container {
-        align-items: center;
-    }
+  .flex-container {
+    align-items: center;
+  }
 
-    .animated-square-loop {
-        animation: neonMoveGrowMobile 1.8s ease-in-out infinite alternate;
-    }
+  .animated-square-loop {
+    animation: neonMoveGrowMobile 1.8s ease-in-out infinite alternate;
+  }
 
-    .animation-track {
-        width: 220px;
-        height: 420px;
-        flex-direction: column;
-    }
+  .animation-track {
+    width: 220px;
+    height: 420px;
+    flex-direction: column;
+  }
 
-    #containerQueryShow{
-        flex-direction: column;
-        height: 460px;
-        padding: 1em;
-    }
+  #containerQueryShow {
+    flex-direction: column;
+    height: 460px;
+    padding: 1em;
+  }
 
-    @container (min-height: 360px) {
-        #containerQueryInnerSquare {
-            background-color: var(--principal);
-            border-color: var(--principal);
-        }
+  @container (min-height: 360px) {
+    #containerQueryInnerSquare {
+      background-color: var(--principal);
+      border-color: var(--principal);
     }
+  }
 
-    @container (min-height: 400px) {
-        #containerQueryInnerSquare {
-            background-color: white;
-            border-color: white;
-            width: 100px;
-            height: 100px;
-        }
+  @container (min-height: 400px) {
+    #containerQueryInnerSquare {
+      background-color: white;
+      border-color: white;
+      width: 100px;
+      height: 100px;
     }
+  }
 
-    @container (min-height: 440px) {
-        #containerQueryInnerSquare {
-            background-color: cyan;
-            border-color: cyan;
-            width: 120px;
-            height: 120px;
-        }
+  @container (min-height: 440px) {
+    #containerQueryInnerSquare {
+      background-color: cyan;
+      border-color: cyan;
+      width: 120px;
+      height: 120px;
     }
-
+  }
 }
 
 @container (min-width: 300px) {
-    #containerQueryInnerSquare {
-        background-color: var(--principal);
-        border-color: var(--principal);
-    }
+  #containerQueryInnerSquare {
+    background-color: var(--principal);
+    border-color: var(--principal);
+  }
 }
 
 @container (min-width: 380px) {
-    #containerQueryInnerSquare {
-        background-color: white;
-        border-color: white;
-        width: 100px;
-        height: 100px;
-    }
+  #containerQueryInnerSquare {
+    background-color: white;
+    border-color: white;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 @container (min-width: 460px) {
-    #containerQueryInnerSquare {
-        background-color: cyan;
-        border-color: cyan;
-        width: 120px;
-        height: 120px;
-    }
+  #containerQueryInnerSquare {
+    background-color: cyan;
+    border-color: cyan;
+    width: 120px;
+    height: 120px;
+  }
 }
-
 
 @keyframes neonMoveGrow {
   from {
@@ -345,37 +353,49 @@ button {
 }
 
 @keyframes neonMoveGrowMobile {
-        from {
-            transform: translateY(0) scale(0.65);
-            background-color: #39ff14;
-        }
-        to {
-            transform: translateY(268px) scale(1.25);
-            background-color: rgb(216, 86, 216);
-        }
-    }
+  from {
+    transform: translateY(0) scale(0.65);
+    background-color: #39ff14;
+  }
+  to {
+    transform: translateY(268px) scale(1.25);
+    background-color: rgb(216, 86, 216);
+  }
+}
 
 .grid-container {
   display: grid;
   width: 100%;
   gap: 10px;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   transition: all 0.4s ease-in-out;
 }
 
 .grid-container.grid-alt {
-  grid-template-areas: 
+  grid-template-areas:
     "uno uno dos"
     "tres cuatro cinco"
     "seis seis seis";
 }
 
-.item1 { grid-area: uno; }
-.item2 { grid-area: dos; }
-.item3 { grid-area: tres; }
-.item4 { grid-area: cuatro; }
-.item5 { grid-area: cinco; }
-.item6 { grid-area: seis; }
+.item1 {
+  grid-area: uno;
+}
+.item2 {
+  grid-area: dos;
+}
+.item3 {
+  grid-area: tres;
+}
+.item4 {
+  grid-area: cuatro;
+}
+.item5 {
+  grid-area: cinco;
+}
+.item6 {
+  grid-area: seis;
+}
 
 .grid-item {
   background: rgba(216, 86, 216, 0.2);
@@ -400,7 +420,7 @@ button {
 .flex-item {
   width: 40px;
   height: 40px;
-  background: #39ff14; 
+  background: #39ff14;
   color: black;
   display: flex;
   justify-content: center;

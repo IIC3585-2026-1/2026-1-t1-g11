@@ -1,224 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Trabajo 1 - CSS - GRUPO 11</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <h1 class="titulo">Trabajo 1</h1>
-        <h3 class="subtitulo"> CSS - Grupo 11</h3>
+      <h1 class="titulo">Trabajo 1</h1>
+      <h3 class="subtitulo">CSS - Grupo 11</h3>
     </div>
     <div class="flex-container">
+      <h2 class="titulo">Transformaciones</h2>
 
-        <h2 class="titulo">Transformaciones</h2>
-
-        <!-- Contenedor para las transformaciones -->
-        <div class="transform-container">
-
-            <!-- Contenedor para la prueba de tamaño -->
-            <div class="test-container">
-                <div class="show">
-                    <div class="square">
-                        <div id="innerSquare" class="inner"></div>
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Tamaño</p>
-                    <input id="sizeSlider" type="range" min="10" max="100" value="50"
-                        oninput="updateSquareSize(this.value)">
-                </div>
-            </div>
-
-            <!-- Contenedor para la prueba de rotación -->
-            <div class="test-container">
-                <div class="show">
-                    <div id="rotatingSquare" class="square">
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Rotacion</p>
-                    <input id="rotationSlider" type="range" min="0" max="360" value="0"
-                        oninput="updateSquareRotation(this.value)">
-                </div>
-            </div>
-
-            <!-- Contenedor para la prueba de traslación -->
-            <div class="test-container">
-                <div class="show">
-                    <div id="translatingSquare" class="square">
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Traslacion</p>
-                    <input id="translationSlider" type="range" min="-100" max="100" value="0"
-                        oninput="updateSquareTranslation(this.value)">
-                </div>
-            </div>
-
-        </div>
-
-        <h2>Animaciones</h2>
-
-        <!-- Contenedor para la animación -->
-        <div class="animation-container">
-            <div class="test-container">
-                <div class="show">
-                    <div class="animation-track">
-                        <div id="animatedSquare" class="animated-square"></div>
-                    </div>
-                </div>
-                <div class="test">
-                    <button id="animationButton" onclick="startLoopAnimation()">¡Animacíon!</button>
-                </div>
-            </div>
-        </div>
-
-        <h2>Transiciones</h2>
-
-        <div class="transition-container">
-
-            <!-- Contenedor para la transicion de opacidad -->
-            <div class="test-container">
-                <div class="show">
-                    <div id="opacitySquare" class="square"></div>
-                </div>
-                <div class="test">
-                    <p>Opacidad</p>
-                </div>
-            </div>
-
-            <!-- Contenedor para la transicion de color -->
-            <div class="test-container">
-                <div class="show">
-                    <div id="colorSquare" class="square"></div>
-                </div>
-                <div class="test">
-                    <p>Color</p>
-                </div>
-            </div>
-
-            <!-- Contenedor para la transicion de tamaño -->
-            <div class="test-container">
-                <div class="show">
-                    <div class="square">
-                        <div id="sizeSquare" class="square"></div>
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Tamaño</p>
-                </div>
-            </div>
-
-        </div>
-
-        <h2>Variables y funciones</h2>
-
-        <!-- Contenedor para las variables y funciones -->
-        <div class="variables-container">
-            <div class="test-container">
-                <div class="show">
-                    <div id="triangleWrapper" class="square">
-                        <div id="rightTriangle" class="right-triangle"></div>
-                    </div>
-                    <div class="triangle-labels">
-                        <span id="yValueLabel" class="triangle-label triangle-label-y">y = 1</span>
-                        <span id="xValueLabel" class="triangle-label triangle-label-x">x = 1</span>
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Variable CSS</p>
-                    <label for="xSlider">x: <span id="xSliderValue">1</span></label>
-                    <input id="xSlider" type="range" min="1" max="5" value="1"
-                        oninput="updateRightTriangle(this.value, null)">
-                    <label for="ySlider">y: <span id="ySliderValue">1</span></label>
-                    <input id="ySlider" type="range" min="1" max="5" value="1"
-                        oninput="updateRightTriangle(null, this.value)">
-                    <p id="hypotenuseValue">Hipotenusa: 1.41</p>
-                </div>
-            </div>
-        </div>
-
-        <h2>Container Query</h2>
-
-        <!-- Contenedor para la prueba de Container Query -->
-        <div class="container-query-container">
-            <div class="test-container">
-                <div id="containerQueryShow" class="show">
-                    <div class="animation-track" id="containerQuerySquare">
-                        <div id="containerQueryInnerSquare" class="square"></div>
-                    </div>
-                </div>
-                <div class="test">
-                    <p>Tamaño del container</p>
-                    <input id="translationSlider" type="range" min="-120" max="120" value="0"
-                        oninput="updateContainerQuerySquareSize(this.value)">
-                </div>
-            </div>
-        </div>
-
-
-
-    <h2>Grid</h2>
-    <div class="zona-grid">
+      <!-- Contenedor para las transformaciones -->
+      <div class="transform-container">
+        <!-- Contenedor para la prueba de tamaño -->
         <div class="test-container">
-            <div class="show">
-                <div id="grid-container" class="grid-container">
-                    <div class="grid-item item1">1</div>
-                    <div class="grid-item item2">2</div>
-                    <div class="grid-item item3">3</div>
-                    <div class="grid-item item4">4</div>
-                    <div class="grid-item item5">5</div>
-                    <div class="grid-item item6">6</div>
-                </div>
+          <div class="show">
+            <div class="square">
+              <div id="innerSquare" class="inner"></div>
             </div>
-            <div class="test">
-                <p>Cambiar Layout (Grid Areas)</p>
-                <button onclick="toggleGridLayout()">Alternar Diseño</button>
-            </div>
+          </div>
+          <div class="test">
+            <p>Tamaño</p>
+            <input
+              id="sizeSlider"
+              type="range"
+              min="10"
+              max="100"
+              value="50"
+              oninput="updateSquareSize(this.value)"
+            />
+          </div>
         </div>
-    </div>
 
-    <h2>Grid + Transiciones</h2>
-    <section class="grid-transitions-container">
-	    <div>1</div>
-	    <div>2</div>
-	    <div>3</div>
-	    <div>4</div>
-	    <div>5</div>
-	    <div>6</div>
-	    <div>7</div>
-    </section>
-
-    <h2>Flexbox</h2>
-    <div class="flex-playground">
+        <!-- Contenedor para la prueba de rotación -->
         <div class="test-container">
-            <div class="show">
-                <div id="flexboxBox" class="flex-display">
-                    <div class="flex-item">A</div>
-                    <div class="flex-item">B</div>
-                    <div class="flex-item">C</div>
-                </div>
-            </div>
-            <div class="test">
-                <p>Justify Content</p>
-                <select onchange="updateFlex(this.value)">
-                    <option value="center">Center</option>
-                    <option value="space-between">Space Between</option>
-                    <option value="space-around">Space Around</option>
-                    <option value="flex-start">Flex Start</option>
-                </select>
-            </div>
+          <div class="show">
+            <div id="rotatingSquare" class="square"></div>
+          </div>
+          <div class="test">
+            <p>Rotacion</p>
+            <input
+              id="rotationSlider"
+              type="range"
+              min="0"
+              max="360"
+              value="0"
+              oninput="updateSquareRotation(this.value)"
+            />
+          </div>
         </div>
-    </div>
 
+        <!-- Contenedor para la prueba de traslación -->
+        <div class="test-container">
+          <div class="show">
+            <div id="translatingSquare" class="square"></div>
+          </div>
+          <div class="test">
+            <p>Traslacion</p>
+            <input
+              id="translationSlider"
+              type="range"
+              min="-100"
+              max="100"
+              value="0"
+              oninput="updateSquareTranslation(this.value)"
+            />
+          </div>
+        </div>
+      </div>
 
-    <script>
+      <h2>Animaciones</h2>
 
+      <!-- Contenedor para la animación -->
+      <div class="animation-container">
+        <div class="test-container">
+          <div class="show">
+            <div class="animation-track">
+              <div id="animatedSquare" class="animated-square"></div>
+            </div>
+          </div>
+          <div class="test">
+            <button id="animationButton" onclick="startLoopAnimation()">
+              ¡Animacíon!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Transiciones</h2>
+
+      <div class="transition-container">
+        <!-- Contenedor para la transicion de opacidad -->
+        <div class="test-container">
+          <div class="show">
+            <div id="opacitySquare" class="square"></div>
+          </div>
+          <div class="test">
+            <p>Opacidad</p>
+          </div>
+        </div>
+
+        <!-- Contenedor para la transicion de color -->
+        <div class="test-container">
+          <div class="show">
+            <div id="colorSquare" class="square"></div>
+          </div>
+          <div class="test">
+            <p>Color</p>
+          </div>
+        </div>
+
+        <!-- Contenedor para la transicion de tamaño -->
+        <div class="test-container">
+          <div class="show">
+            <div class="square">
+              <div id="sizeSquare" class="square"></div>
+            </div>
+          </div>
+          <div class="test">
+            <p>Tamaño</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Variables y funciones</h2>
+
+      <!-- Contenedor para las variables y funciones -->
+      <div class="variables-container">
+        <div class="test-container">
+          <div class="show">
+            <div id="triangleWrapper" class="square">
+              <div id="rightTriangle" class="right-triangle"></div>
+            </div>
+            <div class="triangle-labels">
+              <span id="yValueLabel" class="triangle-label triangle-label-y"
+                >y = 1</span
+              >
+              <span id="xValueLabel" class="triangle-label triangle-label-x"
+                >x = 1</span
+              >
+            </div>
+          </div>
+          <div class="test">
+            <p>Variable CSS</p>
+            <label for="xSlider">x: <span id="xSliderValue">1</span></label>
+            <input
+              id="xSlider"
+              type="range"
+              min="1"
+              max="5"
+              value="1"
+              oninput="updateRightTriangle(this.value, null)"
+            />
+            <label for="ySlider">y: <span id="ySliderValue">1</span></label>
+            <input
+              id="ySlider"
+              type="range"
+              min="1"
+              max="5"
+              value="1"
+              oninput="updateRightTriangle(null, this.value)"
+            />
+            <p id="hypotenuseValue">Hipotenusa: 1.41</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Container Query</h2>
+
+      <!-- Contenedor para la prueba de Container Query -->
+      <div class="container-query-container">
+        <div class="test-container">
+          <div id="containerQueryShow" class="show">
+            <div class="animation-track" id="containerQuerySquare">
+              <div id="containerQueryInnerSquare" class="square"></div>
+            </div>
+          </div>
+          <div class="test">
+            <p>Tamaño del container</p>
+            <input
+              id="translationSlider"
+              type="range"
+              min="-120"
+              max="120"
+              value="0"
+              oninput="updateContainerQuerySquareSize(this.value)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <h2>Grid</h2>
+      <div class="zona-grid">
+        <div class="test-container">
+          <div class="show">
+            <div id="grid-container" class="grid-container">
+              <div class="grid-item item1">1</div>
+              <div class="grid-item item2">2</div>
+              <div class="grid-item item3">3</div>
+              <div class="grid-item item4">4</div>
+              <div class="grid-item item5">5</div>
+              <div class="grid-item item6">6</div>
+            </div>
+          </div>
+          <div class="test">
+            <p>Cambiar Layout (Grid Areas)</p>
+            <button onclick="toggleGridLayout()">Alternar Diseño</button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Grid + Transiciones</h2>
+      <section class="grid-transitions-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+      </section>
+
+      <h2>Flexbox</h2>
+      <div class="flex-playground">
+        <div class="test-container">
+          <div class="show">
+            <div id="flexboxBox" class="flex-display">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div class="test">
+            <p>Justify Content</p>
+            <select onchange="updateFlex(this.value)">
+              <option value="center">Center</option>
+              <option value="space-between">Space Between</option>
+              <option value="space-around">Space Around</option>
+              <option value="flex-start">Flex Start</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <script>
         let isAnimating = false;
 
         let x = 1;
@@ -226,104 +256,106 @@
 
         // Función para actualizar el tamaño del cuadrado interno
         function updateSquareSize(size) {
-            const innerSquare = document.getElementById('innerSquare');
-            innerSquare.style.width = `${size}%`;
-            innerSquare.style.height = `${size}%`;
+          const innerSquare = document.getElementById("innerSquare");
+          innerSquare.style.width = `${size}%`;
+          innerSquare.style.height = `${size}%`;
         }
 
         // Función para actualizar la rotación del cuadrado
         function updateSquareRotation(angle) {
-            const square = document.getElementById('rotatingSquare');
-            square.style.transform = `rotate(${angle}deg)`;
+          const square = document.getElementById("rotatingSquare");
+          square.style.transform = `rotate(${angle}deg)`;
         }
 
         // Funcion para actualizar la traslación del cuadrado
         function updateSquareTranslation(value) {
-            const square = document.getElementById('translatingSquare');
-            square.style.transform = `translateX(${value}px)`;
+          const square = document.getElementById("translatingSquare");
+          square.style.transform = `translateX(${value}px)`;
         }
 
         // Función para iniciar o detener la animación de bucle
         function startLoopAnimation() {
-            const square = document.getElementById('animatedSquare');
-            const animationButton = document.getElementById('animationButton');
+          const square = document.getElementById("animatedSquare");
+          const animationButton = document.getElementById("animationButton");
 
-            if (!isAnimating) {
-                square.classList.add('animated-square-loop');
-                animationButton.textContent = 'No animacíon :(';
-                isAnimating = true;
-            } else {
-                square.classList.remove('animated-square-loop');
-                animationButton.textContent = '¡Animacíon!';
-                isAnimating = false;
-            }
+          if (!isAnimating) {
+            square.classList.add("animated-square-loop");
+            animationButton.textContent = "No animacíon :(";
+            isAnimating = true;
+          } else {
+            square.classList.remove("animated-square-loop");
+            animationButton.textContent = "¡Animacíon!";
+            isAnimating = false;
+          }
         }
 
         function updateRightTriangle(nextX, nextY) {
-            if (nextX !== null) {
-                x = Number(nextX);
-            }
+          if (nextX !== null) {
+            x = Number(nextX);
+          }
 
-            if (nextY !== null) {
-                y = Number(nextY);
-            }
+          if (nextY !== null) {
+            y = Number(nextY);
+          }
 
-            const unit = 36;
-            const triangle = document.getElementById('rightTriangle');
-            const xSliderValue = document.getElementById('xSliderValue');
-            const ySliderValue = document.getElementById('ySliderValue');
-            const xValueLabel = document.getElementById('xValueLabel');
-            const yValueLabel = document.getElementById('yValueLabel');
-            const hypotenuseValue = document.getElementById('hypotenuseValue');
+          const unit = 36;
+          const triangle = document.getElementById("rightTriangle");
+          const xSliderValue = document.getElementById("xSliderValue");
+          const ySliderValue = document.getElementById("ySliderValue");
+          const xValueLabel = document.getElementById("xValueLabel");
+          const yValueLabel = document.getElementById("yValueLabel");
+          const hypotenuseValue = document.getElementById("hypotenuseValue");
 
-            triangle.style.width = `${x * unit}px`;
-            triangle.style.height = `${y * unit}px`;
+          triangle.style.width = `${x * unit}px`;
+          triangle.style.height = `${y * unit}px`;
 
-            xSliderValue.textContent = x;
-            ySliderValue.textContent = y;
+          xSliderValue.textContent = x;
+          ySliderValue.textContent = y;
 
-            xValueLabel.textContent = `x = ${x}`;
-            yValueLabel.textContent = `y = ${y}`;
+          xValueLabel.textContent = `x = ${x}`;
+          yValueLabel.textContent = `y = ${y}`;
 
-            const hypotenuse = Math.sqrt((x ** 2) + (y ** 2));
-            hypotenuseValue.textContent = `Hipotenusa: ${hypotenuse.toFixed(2)}`;
+          const hypotenuse = Math.sqrt(x ** 2 + y ** 2);
+          hypotenuseValue.textContent = `Hipotenusa: ${hypotenuse.toFixed(2)}`;
         }
 
         function updateContainerQuerySquareSize(value) {
-            const container = document.getElementById('containerQuerySquare');
+          const container = document.getElementById("containerQuerySquare");
 
-            let baseSize = 0;
+          let baseSize = 0;
 
-            console.log('Container size before update:');
-            console.log(`Width: ${container.clientWidth}, Height: ${container.clientHeight}`);
+          console.log("Container size before update:");
+          console.log(
+            `Width: ${container.clientWidth}, Height: ${container.clientHeight}`,
+          );
 
-            let width = parseInt(container.clientWidth);
-            let height = parseInt(container.clientHeight);
+          let width = parseInt(container.clientWidth);
+          let height = parseInt(container.clientHeight);
 
-            let extraSize = (width > height) ? Number(value) : Number(value) * 0.5;
+          let extraSize = width > height ? Number(value) : Number(value) * 0.5;
 
-            const newSize = 420 + extraSize;
+          const newSize = 420 + extraSize;
 
-            if (width > height) {
-                container.style.width = `${newSize}px`;
-            } else {
-                container.style.height = `${newSize}px`;
-            }
+          if (width > height) {
+            container.style.width = `${newSize}px`;
+          } else {
+            container.style.height = `${newSize}px`;
+          }
         }
 
-        updateSquareSize(document.getElementById('sizeSlider').value);
-        updateSquareRotation(document.getElementById('rotationSlider').value);
+        updateSquareSize(document.getElementById("sizeSlider").value);
+        updateSquareRotation(document.getElementById("rotationSlider").value);
         updateRightTriangle(1, 1);
 
         function toggleGridLayout() {
-            const grid = document.getElementById('grid-container');
-            grid.classList.toggle('grid-alt');
+          const grid = document.getElementById("grid-container");
+          grid.classList.toggle("grid-alt");
         }
         function updateFlex(value) {
-            const flex = document.getElementById('flexboxBox');
-            flex.style.justifyContent = value;
+          const flex = document.getElementById("flexboxBox");
+          flex.style.justifyContent = value;
         }
-
-    </script>
-</body>
+      </script>
+    </div>
+  </body>
 </html>
