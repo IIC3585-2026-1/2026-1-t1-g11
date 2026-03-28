@@ -307,3 +307,56 @@ button {
             background-color: rgb(216, 86, 216);
         }
     }
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr); 
+  transition: all 0.4s ease-in-out;
+}
+
+.grid-container.grid-alt {
+  grid-template-areas: 
+    "uno uno dos"
+    "tres cuatro cinco"
+    "seis seis seis";
+}
+
+.item1 { grid-area: uno; }
+.item2 { grid-area: dos; }
+.item3 { grid-area: tres; }
+.item4 { grid-area: cuatro; }
+.item5 { grid-area: cinco; }
+.item6 { grid-area: seis; }
+
+.grid-item {
+  background: rgba(216, 86, 216, 0.2);
+  border: 1px solid var(--principal);
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.flex-display {
+  display: flex;
+  width: 100%;
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  transition: justify-content 0.3s ease;
+}
+
+.flex-item {
+  width: 40px;
+  height: 40px;
+  background: #39ff14; 
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}

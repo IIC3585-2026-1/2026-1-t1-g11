@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Trabajo 1 - CSS - GRUPO 11</title>
 </head>
+
 <body>
     <div class="header">
         <h1 class="titulo">Trabajo 1</h1>
@@ -27,14 +29,8 @@
                 </div>
                 <div class="test">
                     <p>Tamaño</p>
-                    <input
-                        id="sizeSlider"
-                        type="range"
-                        min="10"
-                        max="100"
-                        value="50"
-                        oninput="updateSquareSize(this.value)"
-                    >
+                    <input id="sizeSlider" type="range" min="10" max="100" value="50"
+                        oninput="updateSquareSize(this.value)">
                 </div>
             </div>
 
@@ -46,14 +42,8 @@
                 </div>
                 <div class="test">
                     <p>Rotacion</p>
-                    <input
-                        id="rotationSlider"
-                        type="range"
-                        min="0"
-                        max="360"
-                        value="0"
-                        oninput="updateSquareRotation(this.value)"
-                    >
+                    <input id="rotationSlider" type="range" min="0" max="360" value="0"
+                        oninput="updateSquareRotation(this.value)">
                 </div>
             </div>
 
@@ -65,14 +55,8 @@
                 </div>
                 <div class="test">
                     <p>Traslacion</p>
-                    <input
-                        id="translationSlider"
-                        type="range"
-                        min="-100"
-                        max="100"
-                        value="0"
-                        oninput="updateSquareTranslation(this.value)"
-                    >
+                    <input id="translationSlider" type="range" min="-100" max="100" value="0"
+                        oninput="updateSquareTranslation(this.value)">
                 </div>
             </div>
 
@@ -97,7 +81,7 @@
         <h2>Transiciones</h2>
 
         <div class="transition-container">
-            
+
             <!-- Contenedor para la transicion de opacidad -->
             <div class="test-container">
                 <div class="show">
@@ -149,23 +133,11 @@
                 <div class="test">
                     <p>Variable CSS</p>
                     <label for="xSlider">x: <span id="xSliderValue">1</span></label>
-                    <input
-                        id="xSlider"
-                        type="range"
-                        min="1"
-                        max="5"
-                        value="1"
-                        oninput="updateRightTriangle(this.value, null)"
-                    >
+                    <input id="xSlider" type="range" min="1" max="5" value="1"
+                        oninput="updateRightTriangle(this.value, null)">
                     <label for="ySlider">y: <span id="ySliderValue">1</span></label>
-                    <input
-                        id="ySlider"
-                        type="range"
-                        min="1"
-                        max="5"
-                        value="1"
-                        oninput="updateRightTriangle(null, this.value)"
-                    >
+                    <input id="ySlider" type="range" min="1" max="5" value="1"
+                        oninput="updateRightTriangle(null, this.value)">
                     <p id="hypotenuseValue">Hipotenusa: 1.41</p>
                 </div>
             </div>
@@ -183,19 +155,59 @@
                 </div>
                 <div class="test">
                     <p>Tamaño del container</p>
-                    <input
-                        id="translationSlider"
-                        type="range"
-                        min="-120"
-                        max="120"
-                        value="0"
-                        oninput="updateContainerQuerySquareSize(this.value)"
-                    >
+                    <input id="translationSlider" type="range" min="-120" max="120" value="0"
+                        oninput="updateContainerQuerySquareSize(this.value)">
                 </div>
             </div>
         </div>
 
     </div>
+
+    <h2>Grid</h2>
+    <div class="zona-grid">
+        <div class="test-container">
+            <div class="show">
+                <div id="grid-container" class="grid-container">
+                    <div class="grid-item item1">1</div>
+                    <div class="grid-item item2">2</div>
+                    <div class="grid-item item3">3</div>
+                    <div class="grid-item item4">4</div>
+                    <div class="grid-item item5">5</div>
+                    <div class="grid-item item6">6</div>
+                </div>
+            </div>
+            <div class="test">
+                <p>Cambiar Layout (Grid Areas)</p>
+                <button onclick="toggleGridLayout()">Alternar Diseño</button>
+            </div>
+        </div>
+    </div>
+
+    <h2>Flexbox</h2>
+    <div class="flex-playground">
+        <div class="test-container">
+            <div class="show">
+                <div id="flexboxBox" class="flex-display">
+                    <div class="flex-item">A</div>
+                    <div class="flex-item">B</div>
+                    <div class="flex-item">C</div>
+                    <div class="flex-item">D</div>
+                    <div class="flex-item">E</div>
+                    <div class="flex-item">F</div>
+                </div>
+            </div>
+            <div class="test">
+                <p>Justify Content</p>
+                <select onchange="updateFlex(this.value)">
+                    <option value="center">Center</option>
+                    <option value="space-between">Space Between</option>
+                    <option value="space-around">Space Around</option>
+                    <option value="flex-start">Flex Start</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
 
     <script>
 
@@ -281,7 +293,7 @@
             let height = parseInt(container.clientHeight);
 
             let extraSize = (width > height) ? Number(value) : Number(value) * 0.5;
-            
+
             const newSize = 420 + extraSize;
 
             if (width > height) {
@@ -294,6 +306,17 @@
         updateSquareSize(document.getElementById('sizeSlider').value);
         updateSquareRotation(document.getElementById('rotationSlider').value);
         updateRightTriangle(1, 1);
+
+        function toggleGridLayout() {
+            const grid = document.getElementById('grid-container');
+            grid.classList.toggle('grid-alt');
+        }
+        function updateFlex(value) {
+            const flex = document.getElementById('flexboxBox');
+            flex.style.justifyContent = value;
+        }
+
     </script>
 </body>
+
 </html>
